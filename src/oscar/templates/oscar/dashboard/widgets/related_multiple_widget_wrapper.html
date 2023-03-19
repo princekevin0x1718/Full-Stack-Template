@@ -1,0 +1,13 @@
+{% load i18n static %}
+<div class="related-widget-wrapper multiple">
+    {{ rendered_widget }}
+    {% block links %}
+        {% spaceless %}
+        <a class="related-widget-wrapper-link add-related" id="create_id_{{ name }}"
+            href="{{ add_related_url }}?{{ url_params }}"
+            title="{% blocktrans %}Add another {{ model }}{% endblocktrans %}">
+            <img src="{% static 'oscar/img/ui/icon-addlink.svg' %}" alt="{% trans 'Add' %}"/>
+        </a>
+        {% endspaceless %}
+    {% endblock %}
+</div>
